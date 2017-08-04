@@ -1,0 +1,15 @@
+# The main query object.
+type Query {
+  testString: String
+  # The current user.
+  me: User
+  userById(id: Int): User
+}
+
+# A user.
+type User {
+  # The first name.
+  firstName: String
+  # The last name.
+  lastName: String
+}
