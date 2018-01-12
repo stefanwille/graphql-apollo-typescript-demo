@@ -6,6 +6,10 @@ type Query {
   userById(id: Int): User
 }
 
+type Mutation {
+  updateUser(id: Int): User
+}
+
 # A user.
 type User {
   # The first name.
@@ -13,3 +17,4 @@ type User {
   # The last name.
   lastName: String
 }
+
