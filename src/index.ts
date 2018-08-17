@@ -1,10 +1,7 @@
-import express from "express";
-
+import { ServerInfo } from "apollo-server";
 import apolloServer from "./apolloServer";
 
 const PORT = 4000;
-var app = express();
-apolloServer.applyMiddleware({ app });
-app.listen(PORT, () => {
-  console.log(`Server ready at port ${PORT}`);
+apolloServer.listen(PORT).then(({ url }: ServerInfo) => {
+  console.log(`Server listening at ${url}`);
 });
