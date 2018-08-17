@@ -5,10 +5,10 @@ interface User {
 
 const resolvers = {
   Query: {
-    testString() {
+    testString(): string {
       return "Hello!";
     },
-    me(obj: object, args: {}) {
+    me(obj: object, args: {}): User {
       return { firstName: "Gregor", lastName: "Ganss" };
     },
     userById(obj: object, args: { id: string }): User {
@@ -22,7 +22,7 @@ const resolvers = {
     },
   },
   User: {
-    firstName(obj: User, args: {}) {
+    firstName(obj: User, args: {}): string {
       return obj.firstName;
     },
   },
